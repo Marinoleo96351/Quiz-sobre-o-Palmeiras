@@ -1,4 +1,3 @@
-// Corrigido e formatado com base no seu código original
 
 const perguntas = [
     {
