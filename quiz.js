@@ -41,13 +41,13 @@ const perguntas = [
         pergunta: "Qual jogador é o maior artilheiro da história do Palmeiras?",
         respostas: [
           { opcao: "Evair", correto: false },
-          { opcao: "César Maluco", correto: true },
-          { opcao: "Dudu", correto: false },
+          { opcao: "César Maluco", correto: false },
+          { opcao: "Heitor", correto: true },
           { opcao: "Marcos", correto: false }
         ]
       },
       {
-        pergunta: "Quantos títulos do Campeonato Brasileiro o Palmeiras conquistou até 2023?",
+        pergunta: "Quantos títulos do Campeonato Brasileiro o Palmeiras conquistou até o final de 2023?",
         respostas: [
           { opcao: "12", correto: true },
           { opcao: "8", correto: false },
@@ -173,7 +173,7 @@ const perguntas = [
         ]
       },
       {
-        pergunta: "Qual jogador marcou um golaço de cobertura contra o Atlético-MG em 2023?",
+        pergunta: "Qual jogador marcou um golaço de cobertura contra o Atlhético-PR em 2023?",
         respostas: [
           { opcao: "Endrick", correto: true },
           { opcao: "Veiga", correto: false },
@@ -182,7 +182,7 @@ const perguntas = [
         ]
       },
       {
-        pergunta: "Quantos títulos da Copa do Brasil o Palmeiras possui até 2024?",
+        pergunta: "Quantos títulos da Copa do Brasil o Palmeiras possui até o início de 2024?",
         respostas: [
           { opcao: "3", correto: false },
           { opcao: "4", correto: true },
@@ -236,7 +236,7 @@ const perguntas = [
         ]
       },
       {
-        pergunta: "Qual jogador foi revelado pelo Palmeiras e vendido ao Real Madrid em 2023?",
+        pergunta: "Qual jogador foi revelado pelo Palmeiras e vendido ao Real Madrid em 2022?",
         respostas: [
           { opcao: "Endrick", correto: true },
           { opcao: "Gabriel Jesus", correto: false },
@@ -328,7 +328,7 @@ const perguntas = [
       {
         pergunta: "Com qual time o Palmeiras foi rebaixado em 2012?",
         respostas: [
-          { opcao: "Portuguesa", correto: true },
+          { opcao: "Sport", correto: true },
           { opcao: "Grêmio", correto: false },
           { opcao: "Cruzeiro", correto: false },
           { opcao: "Coritiba", correto: false }
@@ -371,16 +371,16 @@ const perguntas = [
         ]
       },
       {
-        pergunta: "Quantos Paulistões o Palmeiras venceu até 2023?",
+        pergunta: "Quantos Paulistões o Palmeiras venceu até o final de 2023?",
         respostas: [
-          { opcao: "25", correto: false },
-          { opcao: "24", correto: true },
+          { opcao: "25", correto: true },
+          { opcao: "24", correto: false },
           { opcao: "26", correto: false },
           { opcao: "23", correto: false }
         ]
       },
       {
-        pergunta: "Qual jogador ficou famoso pelo bordão 'Aqui é Palmeiras' após título?",
+        pergunta: "Qual jogador ficou famoso pelo bordão '......... pai do Flamengo!'?",
         respostas: [
           { opcao: "Felipão", correto: false },
           { opcao: "Deyverson", correto: true },
