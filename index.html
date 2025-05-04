@@ -2,29 +2,36 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiz Palmeiras</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="titulo">
+  <header class="titulo">
     <h2>Quiz sobre o Palmeiras - feito por Leo Marino</h2>
-  </div>
+  </header>
 
-  <div class="conteudo-jogo">
+  <main class="conteudo-jogo">
     <section class="questionario">
+      
+      <!-- Bloco de perguntas e respostas -->
       <div class="conteudo">
-        <span class="progresso"></span>
-        <span class="pergunta"></span>
-        <div class="respostas"></div>
+        <span class="progresso">Pergunta 1 de X</span>
+        <span class="pergunta">Carregando pergunta...</span>
+        <div class="respostas">
+          <!-- Botões de resposta gerados via JS -->
+        </div>
       </div>
 
+      <!-- Bloco final exibido ao terminar o quiz -->
       <div class="fim">
-        <span></span>
+        <span>Você acertou X de Y perguntas!</span>
         <button class="reiniciar" onclick="reiniciarQuiz()">Reiniciar</button>
       </div>
+      
     </section>
-  </div>
+  </main>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="quiz.js"></script>
