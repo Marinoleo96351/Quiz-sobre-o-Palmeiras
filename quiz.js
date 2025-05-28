@@ -18,7 +18,7 @@ const perguntas = [
         { opcao: "Clube Esportivo Paulista", correto: false }
       ]
     },
-    // ...
+  
     {
         pergunta: "Quantas vezes o Palmeiras venceu a Copa Libertadores até 2018?",
         respostas: [
@@ -542,7 +542,7 @@ const perguntas = [
         ]
       },
       
-    // ...
+
   ];
   
   const perguntaElemento = document.querySelector(".pergunta");
