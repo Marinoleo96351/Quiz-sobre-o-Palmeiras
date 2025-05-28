@@ -11,9 +11,7 @@ Este quiz foi criado para todos os torcedores apaixonados que querem provar que 
 - Curiosidades e fatos inusitados sobre o Palmeiras 💚  
 
 ## 🚀 Como jogar:
-1. Clone o repositório
-2. Execute o projeto (ver instruções abaixo)
-3. Responda às perguntas e veja sua pontuação no final!
+--->siga o link:https://marinoleo96351.github.io/Quiz-sobre-o-Palmeiras/
 
 ## 📦 Tecnologias usadas:
 - [HTML]
