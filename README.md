@@ -2,7 +2,7 @@
 
 Bem-vindo ao **Quiz Palmeiras**, um desafio com **60 perguntas** para testar seus conhecimentos sobre a **Sociedade Esportiva Palmeiras**! ⚽️
 
-Este quiz foi criado para todos os torcedores apaixonados que querem provar que conhecem a fundo a história, os títulos, os ídolos e as curiosidades do Verdão.
+Este quiz foi criado para todos os torcedores apaixonados que querem provar que conhecem a fundo a história, os títulos, os ídolos e as curiosidades do Verdão!
 
 ## ✨ O que você vai encontrar:
 - Perguntas sobre títulos nacionais e internacionais 🏆  
