@@ -9,44 +9,38 @@
 <body>
 
   <header class="titulo">
-    <h2>Quiz sobre o Palmeiras - feito por Leo Marino</h2>
+    <h1>Quiz sobre o Palmeiras - feito por Leo Marino</h1>
   </header>
 
   <main class="conteudo-jogo">
     <section class="questionario">
-      
-    
+
       <div class="conteudo">
-        <span class="progresso">Pergunta 1 de X</span>
-        <span class="pergunta">Carregando pergunta...</span>
-        <div class="respostas">
-          
-        </div>
+        <span class="progresso"></span>
+        <p class="pergunta"></p>
+        <div class="respostas"></div>
       </div>
 
-  
       <div class="fim">
-        <span class="pontuacao-final">Você acertou X de Y perguntas!</span>
+        <p class="pontuacao-final"></p>
         <div class="rank-container">
           <span class="rank-titulo"></span>
           <span class="rank-mensagem"></span>
         </div>
         <div class="fim-acoes">
-          <button class="btn-gabarito" onclick="toggleGabarito()">Ver Gabarito</button>
-          <button class="reiniciar" onclick="reiniciarQuiz()">Reiniciar</button>
+          <button class="btn-gabarito">Ver Gabarito</button>
+          <button class="reiniciar">Reiniciar</button>
         </div>
         <div class="gabarito" id="gabarito"></div>
       </div>
-      
+
     </section>
   </main>
 
- 
-  <footer style="text-align: center; padding: 20px; font-size: 14px; color: #004d1a;">
+  <footer class="rodape">
     &copy; 2025 Leo Marino. Todos os direitos reservados.
   </footer>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="quiz.js"></script>
 </body>
 </html>

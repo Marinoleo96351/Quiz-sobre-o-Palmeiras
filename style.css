@@ -12,8 +12,13 @@ body {
   padding: 30px 20px;
   background-color: #007f3d;
   color: #fff;
-  font-size: 28px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.titulo h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
 }
 
 .conteudo,
@@ -32,6 +37,7 @@ body {
 .pergunta {
   font-size: 22px;
   font-weight: 600;
+  margin: 0;
 }
 
 .respostas {
@@ -72,11 +78,12 @@ body {
   flex-direction: column;
 }
 
-.fim span {
+.pontuacao-final {
   font-size: 26px;
   font-weight: bold;
   color: #004d1a;
   text-align: center;
+  margin: 0;
 }
 
 .rank-container {
@@ -93,22 +100,21 @@ body {
 }
 
 .rank-titulo {
-  font-size: 28px !important;
-  font-weight: 800 !important;
-  color: #007f3d !important;
+  font-size: 28px;
+  font-weight: 800;
+  color: #007f3d;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 .rank-mensagem {
-  font-size: 16px !important;
-  font-weight: 400 !important;
-  color: #004d1a !important;
+  font-size: 16px;
+  font-weight: 400;
+  color: #004d1a;
   font-style: italic;
 }
 
 button.reiniciar {
-  margin-top: 25px;
   padding: 12px 24px;
   background-color: #ffc107;
   color: #004d1a;
@@ -200,6 +206,13 @@ button.reiniciar:hover {
   font-weight: 500;
 }
 
+.rodape {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #004d1a;
+}
+
 @media (max-width: 600px) {
   .conteudo, .fim {
     margin: 20px;
@@ -211,7 +224,17 @@ button.reiniciar:hover {
     padding: 12px 16px;
   }
 
-  .titulo {
-    font-size: 24px;
+  .titulo h1 {
+    font-size: 20px;
+  }
+
+  .fim-acoes {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-gabarito,
+  button.reiniciar {
+    width: 100%;
   }
 }

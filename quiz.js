@@ -1,4 +1,6 @@
 
+(function () {
+
 const perguntas = [
     {
       pergunta: "Em que ano a Sociedade Esportiva Palmeiras foi fundada?",
@@ -545,29 +547,31 @@ const perguntas = [
 
   ];
   
-  const perguntaElemento = document.querySelector(".pergunta");
-  const respostasElemento = document.querySelector(".respostas");
-  const progressoElemento = document.querySelector(".progresso");
-  const textoFinal = document.querySelector(".pontuacao-final");
-  const conteudo = document.querySelector(".conteudo");
-  const conteudoFinal = document.querySelector(".fim");
-  
+  const perguntaElemento = document.querySelector('.pergunta');
+  const respostasElemento = document.querySelector('.respostas');
+  const progressoElemento = document.querySelector('.progresso');
+  const textoFinal = document.querySelector('.pontuacao-final');
+  const conteudo = document.querySelector('.conteudo');
+  const conteudoFinal = document.querySelector('.fim');
+  const gabaritoEl = document.getElementById('gabarito');
+  const btnGabarito = document.querySelector('.btn-gabarito');
+
   let indiceAtual = 0;
   let acertos = 0;
   let historico = [];
-  
+
   function carregarPergunta() {
-    progressoElemento.innerHTML = `${indiceAtual + 1}/${perguntas.length}`;
+    progressoElemento.textContent = `${indiceAtual + 1}/${perguntas.length}`;
     const perguntaAtual = perguntas[indiceAtual];
-    perguntaElemento.innerHTML = perguntaAtual.pergunta;
-    respostasElemento.innerHTML = "";
-  
+    perguntaElemento.textContent = perguntaAtual.pergunta;
+    respostasElemento.innerHTML = '';
+
     perguntaAtual.respostas.forEach(resposta => {
-      const botao = document.createElement("button");
-      botao.classList.add("botao-resposta");
-      botao.innerText = resposta.opcao;
-  
-      botao.onclick = () => {
+      const botao = document.createElement('button');
+      botao.classList.add('botao-resposta');
+      botao.textContent = resposta.opcao;
+
+      botao.addEventListener('click', () => {
         if (resposta.correto) acertos++;
         historico.push({
           pergunta: perguntaAtual.pergunta,
@@ -576,43 +580,39 @@ const perguntas = [
           respostaCorreta: perguntaAtual.respostas.find(r => r.correto).opcao
         });
         indiceAtual++;
-  
         if (indiceAtual < perguntas.length) {
           carregarPergunta();
         } else {
           finalizarJogo();
         }
-      };
-  
+      });
+
       respostasElemento.appendChild(botao);
     });
   }
-  
+
   function getRank(pontos) {
-    if (pontos <= 15) return { titulo: "Turista", mensagem: "Foi só passear no Allianz Parque 😅" };
-    if (pontos <= 35) return { titulo: "Torcedor de Sofá", mensagem: "Você acompanha o Verdão do conforto de casa!" };
-    if (pontos <= 50) return { titulo: "Sócio Avanti", mensagem: "Você conhece o Palmeiras de verdade!" };
-    if (pontos <= 59) return { titulo: "Ídolo Palestrino", mensagem: "Craque! Você é quase um ídolo do Palmeiras!" };
-    return { titulo: "Terceira Academia", mensagem: "Gabaritou! Você é digno da Terceira Academia!" };
+    if (pontos <= 15) return { titulo: 'Turista', mensagem: 'Foi só passear no Allianz Parque 😅' };
+    if (pontos <= 35) return { titulo: 'Torcedor de Sofá', mensagem: 'Você acompanha o Verdão do conforto de casa!' };
+    if (pontos <= 50) return { titulo: 'Sócio Avanti', mensagem: 'Você conhece o Palmeiras de verdade!' };
+    if (pontos <= 59) return { titulo: 'Ídolo Palestrino', mensagem: 'Craque! Você é quase um ídolo do Palmeiras!' };
+    return { titulo: 'Terceira Academia', mensagem: 'Gabaritou! Você é digno da Terceira Academia!' };
   }
 
   function finalizarJogo() {
     const rank = getRank(acertos);
-    textoFinal.innerHTML = `Você acertou ${acertos} de ${perguntas.length} perguntas!`;
-    document.querySelector(".rank-titulo").innerHTML = rank.titulo;
-    document.querySelector(".rank-mensagem").innerHTML = rank.mensagem;
-    conteudo.style.display = "none";
-    conteudoFinal.style.display = "flex";
+    textoFinal.textContent = `Você acertou ${acertos} de ${perguntas.length} perguntas!`;
+    document.querySelector('.rank-titulo').textContent = rank.titulo;
+    document.querySelector('.rank-mensagem').textContent = rank.mensagem;
+    conteudo.style.display = 'none';
+    conteudoFinal.style.display = 'flex';
   }
-  
-  function toggleGabarito() {
-    const gabaritoEl = document.getElementById("gabarito");
-    const btn = document.querySelector(".btn-gabarito");
-    const visivel = gabaritoEl.style.display === "flex";
 
+  function toggleGabarito() {
+    const visivel = gabaritoEl.style.display === 'flex';
     if (visivel) {
-      gabaritoEl.style.display = "none";
-      btn.textContent = "Ver Gabarito";
+      gabaritoEl.style.display = 'none';
+      btnGabarito.textContent = 'Ver Gabarito';
     } else {
       gabaritoEl.innerHTML = historico.map((item, i) => `
         <div class="gabarito-item ${item.correto ? 'acerto' : 'erro'}">
@@ -622,8 +622,8 @@ const perguntas = [
           ${!item.correto ? `<p class="gabarito-correta">Resposta correta: <strong>${item.respostaCorreta}</strong></p>` : ''}
         </div>
       `).join('');
-      gabaritoEl.style.display = "flex";
-      btn.textContent = "Ocultar Gabarito";
+      gabaritoEl.style.display = 'flex';
+      btnGabarito.textContent = 'Ocultar Gabarito';
     }
   }
 
@@ -631,13 +631,18 @@ const perguntas = [
     indiceAtual = 0;
     acertos = 0;
     historico = [];
-    document.getElementById("gabarito").style.display = "none";
-    document.getElementById("gabarito").innerHTML = "";
-    document.querySelector(".btn-gabarito").textContent = "Ver Gabarito";
-    conteudo.style.display = "flex";
-    conteudoFinal.style.display = "none";
+    gabaritoEl.style.display = 'none';
+    gabaritoEl.innerHTML = '';
+    btnGabarito.textContent = 'Ver Gabarito';
+    conteudo.style.display = 'flex';
+    conteudoFinal.style.display = 'none';
     carregarPergunta();
   }
-  
+
+  btnGabarito.addEventListener('click', toggleGabarito);
+  document.querySelector('.reiniciar').addEventListener('click', reiniciarQuiz);
+
   carregarPergunta();
-  
+
+})();
+
