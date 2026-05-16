@@ -548,7 +548,7 @@ const perguntas = [
   const perguntaElemento = document.querySelector(".pergunta");
   const respostasElemento = document.querySelector(".respostas");
   const progressoElemento = document.querySelector(".progresso");
-  const textoFinal = document.querySelector(".fim span");
+  const textoFinal = document.querySelector(".pontuacao-final");
   const conteudo = document.querySelector(".conteudo");
   const conteudoFinal = document.querySelector(".fim");
   
@@ -581,8 +581,19 @@ const perguntas = [
     });
   }
   
+  function getRank(pontos) {
+    if (pontos <= 15) return { titulo: "Turista", mensagem: "Foi só passear no Allianz Parque 😅" };
+    if (pontos <= 35) return { titulo: "Torcedor de Sofá", mensagem: "Você acompanha o Verdão do conforto de casa!" };
+    if (pontos <= 50) return { titulo: "Sócio Avanti", mensagem: "Você conhece o Palmeiras de verdade!" };
+    if (pontos <= 59) return { titulo: "Ídolo Palestrino", mensagem: "Craque! Você é quase um ídolo do Palmeiras!" };
+    return { titulo: "Terceira Academia", mensagem: "Gabaritou! Você é digno da Terceira Academia!" };
+  }
+
   function finalizarJogo() {
-    textoFinal.innerHTML = `Você acertou ${acertos} de ${perguntas.length}`;
+    const rank = getRank(acertos);
+    textoFinal.innerHTML = `Você acertou ${acertos} de ${perguntas.length} perguntas!`;
+    document.querySelector(".rank-titulo").innerHTML = rank.titulo;
+    document.querySelector(".rank-mensagem").innerHTML = rank.mensagem;
     conteudo.style.display = "none";
     conteudoFinal.style.display = "flex";
   }

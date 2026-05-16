@@ -79,6 +79,34 @@ body {
   text-align: center;
 }
 
+.rank-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background-color: #eaf5ea;
+  border: 2px solid #007f3d;
+  border-radius: 12px;
+  padding: 20px 30px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.rank-titulo {
+  font-size: 28px !important;
+  font-weight: 800 !important;
+  color: #007f3d !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.rank-mensagem {
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  color: #004d1a !important;
+  font-style: italic;
+}
+
 button.reiniciar {
   margin-top: 25px;
   padding: 12px 24px;
