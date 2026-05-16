@@ -125,6 +125,81 @@ button.reiniciar:hover {
   transform: scale(1.05);
 }
 
+.fim-acoes {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-gabarito {
+  padding: 12px 24px;
+  background-color: #004d1a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-gabarito:hover {
+  background-color: #003512;
+  transform: scale(1.05);
+}
+
+.gabarito {
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.gabarito-item {
+  border-radius: 10px;
+  padding: 16px 18px;
+  border-left: 5px solid;
+}
+
+.gabarito-item.acerto {
+  background-color: #d4edda;
+  border-color: #28a745;
+}
+
+.gabarito-item.erro {
+  background-color: #f8d7da;
+  border-color: #dc3545;
+}
+
+.gabarito-numero {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #666;
+  margin: 0 0 4px 0;
+}
+
+.gabarito-pergunta {
+  font-size: 15px;
+  font-weight: 600;
+  color: #004d1a;
+  margin: 0 0 8px 0;
+}
+
+.gabarito-resposta {
+  font-size: 14px;
+  margin: 0 0 4px 0;
+  color: #333;
+}
+
+.gabarito-correta {
+  font-size: 14px;
+  margin: 0;
+  color: #155724;
+  font-weight: 500;
+}
+
 @media (max-width: 600px) {
   .conteudo, .fim {
     margin: 20px;

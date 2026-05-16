@@ -554,6 +554,7 @@ const perguntas = [
   
   let indiceAtual = 0;
   let acertos = 0;
+  let historico = [];
   
   function carregarPergunta() {
     progressoElemento.innerHTML = `${indiceAtual + 1}/${perguntas.length}`;
@@ -568,6 +569,12 @@ const perguntas = [
   
       botao.onclick = () => {
         if (resposta.correto) acertos++;
+        historico.push({
+          pergunta: perguntaAtual.pergunta,
+          respostaUsuario: resposta.opcao,
+          correto: resposta.correto,
+          respostaCorreta: perguntaAtual.respostas.find(r => r.correto).opcao
+        });
         indiceAtual++;
   
         if (indiceAtual < perguntas.length) {
@@ -598,9 +605,35 @@ const perguntas = [
     conteudoFinal.style.display = "flex";
   }
   
+  function toggleGabarito() {
+    const gabaritoEl = document.getElementById("gabarito");
+    const btn = document.querySelector(".btn-gabarito");
+    const visivel = gabaritoEl.style.display === "flex";
+
+    if (visivel) {
+      gabaritoEl.style.display = "none";
+      btn.textContent = "Ver Gabarito";
+    } else {
+      gabaritoEl.innerHTML = historico.map((item, i) => `
+        <div class="gabarito-item ${item.correto ? 'acerto' : 'erro'}">
+          <p class="gabarito-numero">Questão ${i + 1}</p>
+          <p class="gabarito-pergunta">${item.pergunta}</p>
+          <p class="gabarito-resposta">Sua resposta: <strong>${item.respostaUsuario}</strong></p>
+          ${!item.correto ? `<p class="gabarito-correta">Resposta correta: <strong>${item.respostaCorreta}</strong></p>` : ''}
+        </div>
+      `).join('');
+      gabaritoEl.style.display = "flex";
+      btn.textContent = "Ocultar Gabarito";
+    }
+  }
+
   function reiniciarQuiz() {
     indiceAtual = 0;
     acertos = 0;
+    historico = [];
+    document.getElementById("gabarito").style.display = "none";
+    document.getElementById("gabarito").innerHTML = "";
+    document.querySelector(".btn-gabarito").textContent = "Ver Gabarito";
     conteudo.style.display = "flex";
     conteudoFinal.style.display = "none";
     carregarPergunta();
